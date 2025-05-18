@@ -2,4 +2,6 @@
 
 function normalize(text) { return String(text).normalize("NFKC").toLowerCase().trim(); }
 
-module.exports = { normalize: normalize };
+function tokens(text) { return normalize(text).split(/\s+/).filter(Boolean); }
+
+module.exports = { normalize: normalize, tokens: tokens };
