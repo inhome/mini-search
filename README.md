@@ -7,3 +7,7 @@ Run `node test.js` from this folder.
 ## normalize
 
 Normalize compatibility forms and case. Locale-specific matching may require a different strategy.
+
+## tokens
+
+Whitespace tokenization is intentionally simple and does not segment languages without spaces.
