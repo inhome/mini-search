@@ -11,4 +11,11 @@ function score(title, query) {
   return haystack === normalize(query) ? 3 : haystack.startsWith(normalize(query)) ? 2 : 1;
 }
 
-module.exports = { normalize: normalize, tokens: tokens, score: score };
+function search(items, query) {
+  return items.map(function (item, index) { return { item: item, rank: score(item.title, query), index: index }; })
+    .filter(function (entry) { return entry.rank >= 0; })
+    .sort(function (a, b) { return b.rank - a.rank || a.index - b.index; })
+    .map(function (entry) { return entry.item; });
+}
+
+module.exports = { normalize: normalize, tokens: tokens, score: score, search: search };

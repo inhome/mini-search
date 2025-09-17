@@ -11,3 +11,7 @@ Normalize compatibility forms and case. Locale-specific matching may require a d
 ## tokens
 
 Whitespace tokenization is intentionally simple and does not segment languages without spaces.
+
+## score
+
+Rank exact text, full-query prefixes, then all-token substring matches. Negative one means no match.
