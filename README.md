@@ -15,3 +15,7 @@ Whitespace tokenization is intentionally simple and does not segment languages w
 ## score
 
 Rank exact text, full-query prefixes, then all-token substring matches. Negative one means no match.
+
+## search
+
+Keep original order for tied scores and never mutate the input list.
